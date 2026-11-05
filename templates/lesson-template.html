@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#233d78">
+  <title>[Ders adı] | 10. Sınıf Sınav Hazırlığı</title>
+  <link rel="stylesheet" href="lesson-ui.css">
+</head>
+<body>
+  <div class="wrap">
+    <a class="home" href="index.html">← Ders merkezine dön</a>
+    <header class="hero">
+      <small>[DÖNEM / SINAV / ÜNİTE]</small>
+      <h1>[Ders adı ve çalışma alanının başlığı]</h1>
+      <p>[Bu sayfada çalışılacak konuların kısa açıklaması.]</p>
+      <div class="meta" aria-label="Ders bilgileri">
+        <span>10. sınıf</span><span>[Sınav / senaryo]</span><span>[Konu sayısı] konu</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="side" aria-label="Ders konuları">
+        <h2>Konular</h2>
+        <nav class="nav" id="navigation">
+          <!-- Her konu için bir düğme ve benzersiz konu kimliği tanımla. -->
+          <button type="button" class="active" data-topic="konu-1">[1. konu]</button>
+          <button type="button" data-topic="konu-2">[2. konu]</button>
+        </nav>
+        <p class="muted">İlerleme göstergesi ve konu düğmelerini dersin içerik yapısına bağla.</p>
+      </aside>
+
+      <main class="main" id="main">
+        <header class="head">
+          <div><p class="eyebrow">KONU 1 / [BÖLÜM]</p><h2>[Konu başlığı]</h2>
+            <p>[Öğrencinin bu bölümde ne öğreneceği.]</p>
+          </div>
+        </header>
+        <div class="tabs" role="tablist" aria-label="Konu bölümleri">
+          <button type="button" class="active" role="tab" aria-selected="true">Konu anlatımı</button>
+          <button type="button" role="tab" aria-selected="false">Örnekler</button>
+          <button type="button" role="tab" aria-selected="false">Kısa test</button>
+        </div>
+
+        <section class="card">
+          <h3>[Temel bilgi / kazanım]</h3>
+          <p>[Kısa ve anlaşılır açıklama. Gerekirse formül, tablo veya görsel ekle.]</p>
+        </section>
+        <section class="example">
+          <h3>Örnek</h3>
+          <p>[Çözümlü örnek ve adım adım açıklama.]</p>
+        </section>
+        <section class="question" aria-labelledby="question-title">
+          <h3 id="question-title">Kendini dene</h3>
+          <p>[Soru metni]</p>
+          <!-- Seçenekleri, yanıt kontrolünü ve geri bildirimi bu bölüme ekle. -->
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- İlerleme için progress.js içinde bu dosya adına ders kaydı gerekir. -->
+  <script src="progress.js"></script>
+  <script src="annotation.js"></script>
+</body>
+</html>

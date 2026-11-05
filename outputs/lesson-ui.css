@@ -1,0 +1,116 @@
+/* Shared visual system for the lesson pages and the course index. */
+:root {
+  --bg: #f3f6fb;
+  --paper: #ffffff;
+  --ink: #17243b;
+  --muted: #62718a;
+  --line: #dfe6ef;
+  --blue: #3457d6;
+  --pale: #edf1ff;
+  --teal: #087f73;
+  --gold: #a96508;
+  --shadow: 0 10px 30px #25375a12;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg) !important;
+  color: var(--ink) !important;
+  font: 15.5px/1.62 system-ui, "Segoe UI", sans-serif !important;
+}
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+a { color: var(--blue); }
+:focus-visible { outline: 3px solid #9baaff; outline-offset: 2px; }
+
+/* Lesson shell: keep the same proportions and surfaces across every subject. */
+.wrap, .shell { max-width: 1420px !important; margin-inline: auto !important; padding: 20px !important; }
+.home, .hub-home {
+  display: inline-flex !important; align-items: center; min-height: 42px;
+  margin: 0 0 12px; padding: 8px 12px; border: 1px solid var(--line);
+  border-radius: 10px; background: var(--paper); color: var(--blue);
+  text-decoration: none; font-weight: 750;
+}
+.hero {
+  position: relative; overflow: hidden; color: #fff !important;
+  padding: clamp(22px, 3.5vw, 34px) !important; border: 0 !important;
+  border-radius: 20px !important;
+  background: linear-gradient(120deg, #233d78, #4265d6 58%, #168978) !important;
+  box-shadow: var(--shadow) !important;
+}
+.hero small, .hero .kicker, .hero .eyebrow { color: #e3e9ff !important; }
+.hero h1 { max-width: 900px; margin: 6px 0; font-size: clamp(1.55rem, 3.4vw, 2.45rem) !important; line-height: 1.14 !important; letter-spacing: -.025em; }
+.hero p { max-width: 980px; color: #e8edff !important; }
+.hero .meta span, .hero .pill, .hero .badge {
+  border: 1px solid #ffffff50; border-radius: 999px; background: #ffffff18;
+}
+.layout { grid-template-columns: minmax(250px, 290px) minmax(0, 1fr) !important; gap: 18px !important; margin-top: 16px !important; align-items: start; }
+.side, .main {
+  min-width: 0; border: 1px solid var(--line) !important; border-radius: 16px !important;
+  background: var(--paper) !important; box-shadow: var(--shadow) !important;
+}
+.side { position: sticky !important; top: 12px; max-height: calc(100vh - 24px); overflow: auto; padding: 14px !important; }
+.main { min-height: 0 !important; padding: clamp(18px, 2.6vw, 30px) !important; }
+.head, .heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; }
+.head h2, .heading h2 { margin: 4px 0; font-size: clamp(1.25rem, 2.4vw, 1.8rem); line-height: 1.25; }
+.head p, .heading p { max-width: 850px; margin: 0; color: var(--muted); }
+.side h2 { margin: 3px 4px 10px; font-size: 1rem; }
+.side button, .nav button, .major button, .sub button {
+  min-height: 42px; border: 1px solid var(--line); border-radius: 10px;
+  background: #fff; color: var(--ink); text-align: left;
+}
+.side button, .nav button, .major button, .sub button { padding: 9px 10px; }
+.side button.active, .nav button.active, .major button.active,
+.tabs button.active, .tabs span {
+  border-color: #bdc9ff !important; background: var(--pale) !important; color: #2946b4 !important;
+}
+.nav button.done::after, .side button.topic-done::after { color: var(--teal); }
+.tabs { display: flex; flex-wrap: nowrap; gap: 7px; overflow-x: auto; padding: 0 0 9px; margin: 17px 0 14px; border-bottom: 1px solid var(--line); }
+.tabs button, .tabs span { min-height: 40px; flex: 0 0 auto; padding: 8px 11px; border: 1px solid transparent; border-radius: 9px; background: transparent; color: var(--muted); font-weight: 700; white-space: nowrap; }
+.tabs button.active { background: var(--blue) !important; color: #fff !important; border-color: var(--blue) !important; }
+.card, .exercise, .question, .example, .notice, .note, .mapcard {
+  border: 1px solid var(--line) !important; border-radius: 13px !important;
+  background: #fff !important; box-shadow: none;
+}
+.card, .exercise, .question, .example { padding: 14px !important; margin: 9px 0; }
+.card h3, .exercise h3, .question h3, .example h3 { margin: 0 0 7px; font-size: 1rem; }
+.card p, .exercise p, .question p, .example p { color: #42516a; }
+.formula, .tip, .hint { border-radius: 10px; }
+.meter { overflow: hidden; height: 8px; border-radius: 99px; background: #e5eaf3 !important; }
+.meter span { border-radius: inherit; background: var(--teal) !important; }
+button, .action, .btn, .open {
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease, transform .15s ease;
+}
+button:disabled { cursor: not-allowed; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border-color: var(--line) !important; }
+
+/* Course index uses the same colors and card surfaces as the lesson pages. */
+.shell { max-width: 1280px !important; padding: 24px 28px 42px !important; }
+.brand { color: var(--ink) !important; }
+.logo, .mark { background: var(--pale) !important; color: var(--blue) !important; }
+.shell > .hero, .shell .hero { background: linear-gradient(120deg, #233d78, #4265d6 58%, #168978) !important; }
+.course { border-color: var(--line) !important; border-radius: 16px !important; box-shadow: var(--shadow) !important; }
+.course:hover { transform: translateY(-2px); }
+.callout { border-color: var(--line) !important; border-radius: 14px !important; background: #fff !important; }
+.course .open, .course .btn, .course .action { border-radius: 9px; }
+
+@media (max-width: 850px) {
+  .wrap, .shell { padding: 12px !important; }
+  .layout { grid-template-columns: minmax(0, 1fr) !important; gap: 12px !important; }
+  .side { position: static !important; top: auto; max-height: none; }
+  .main { padding: 16px !important; }
+  .head, .heading { display: block; }
+  .hero { padding: 20px !important; border-radius: 16px !important; }
+  .grid2 { grid-template-columns: minmax(0, 1fr) !important; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero h1 { font-size: clamp(1.45rem, 8vw, 2rem) !important; }
+  .tabs { overscroll-behavior-x: contain; }
+}
