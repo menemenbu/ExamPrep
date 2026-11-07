@@ -37,28 +37,49 @@
           </div>
         </header>
         <div class="tabs" role="tablist" aria-label="Konu bölümleri">
-          <button type="button" class="active" role="tab" aria-selected="true">Konu anlatımı</button>
-          <button type="button" role="tab" aria-selected="false">Örnekler</button>
-          <button type="button" role="tab" aria-selected="false">Kısa test</button>
+          <button type="button" class="active" role="tab" aria-selected="true" aria-controls="lesson-panel" data-mode="lesson" onclick="setMode('lesson')">Konu anlatımı</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="examples-panel" data-mode="examples" onclick="setMode('examples')">Çözümlü örnekler</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="quiz-panel" data-mode="quiz" onclick="setMode('quiz')">Kısa test</button>
         </div>
 
-        <section class="card">
-          <h3>[Temel bilgi / kazanım]</h3>
-          <p>[Kısa ve anlaşılır açıklama. Gerekirse formül, tablo veya görsel ekle.]</p>
+        <!-- Keep each mode's content in its own panel; do not place all three in one button/panel. -->
+        <section class="tab-panel" id="lesson-panel" role="tabpanel" data-panel="lesson">
+          <div class="card">
+            <h3>[Temel bilgi / kazanım]</h3>
+            <p>[Kısa ve anlaşılır konu anlatımı. Gerekirse formül, tablo veya görsel ekle.]</p>
+          </div>
         </section>
-        <section class="example">
-          <h3>Örnek</h3>
-          <p>[Çözümlü örnek ve adım adım açıklama.]</p>
+        <section class="tab-panel" id="examples-panel" role="tabpanel" data-panel="examples" hidden>
+          <article class="example">
+            <h3>Örnek 1</h3>
+            <p>[Soru veya örnek metin]</p>
+            <ol class="steps"><li>[Çözüm adımı]</li><li>[Sonuç ve gerekçe]</li></ol>
+          </article>
         </section>
-        <section class="question" aria-labelledby="question-title">
-          <h3 id="question-title">Kendini dene</h3>
-          <p>[Soru metni]</p>
-          <!-- Seçenekleri, yanıt kontrolünü ve geri bildirimi bu bölüme ekle. -->
+        <section class="tab-panel" id="quiz-panel" role="tabpanel" data-panel="quiz" hidden>
+          <section class="question" aria-labelledby="question-title">
+            <h3 id="question-title">Kendini dene</h3>
+            <p>[Kısa test sorusu]</p>
+            <!-- Seçenekleri, yanıt kontrolünü ve geri bildirimi bu bölüme ekle. -->
+          </section>
         </section>
       </main>
     </div>
   </div>
 
+  <script>
+    // Minimal tab behavior for a new lesson built from this template.
+    function setMode(mode) {
+      document.querySelectorAll('[data-mode]').forEach(button => {
+        const selected = button.dataset.mode === mode;
+        button.classList.toggle('active', selected);
+        button.setAttribute('aria-selected', String(selected));
+      });
+      document.querySelectorAll('[data-panel]').forEach(panel => {
+        panel.hidden = panel.dataset.panel !== mode;
+      });
+    }
+  </script>
   <!-- İlerleme için progress.js içinde bu dosya adına ders kaydı gerekir. -->
   <script src="progress.js"></script>
   <script src="annotation.js"></script>

@@ -7,6 +7,7 @@
     '10sinif_sayfa94_calisma_alani.html': { course: 'math', key: 'math94-progress-v3', topicQuiz: true },
     '10sinif_almanca_neue_stadt_calisma_alani.html': { course: 'german', key: 'deutsch-thema5-s1-done' },
     '10sinif_metin_tahlilleri_calisma_alani.html': { course: 'literature', key: 'tde-metin-tahlili-done' },
+    '10sinif_edebiyat_ortak_yazili_calisma_alani.html': { course: 'tdeExam', key: 'tde-ortak-sinav-2026' },
     '10sinif_tarih_senaryo_calisma_alani.html': { course: 'history', key: 'tarihScenario2026Done', topicQuiz: true },
     '10sinif_felsefe_sayfa56_calisma_alani.html': { course: 'philosophy', key: 'philosophy56Done', topicQuiz: true }
   };
