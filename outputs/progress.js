@@ -4,12 +4,14 @@
     '10sinif_biyoloji_senaryo4_calisma_alani.html': { course: 'biology', key: 'bioScenario4Done2026', topicQuiz: true },
     '10sinif_kimya_senaryo4_calisma_alani.html': { course: 'chemistry', key: 'kimyaScenario4Done2026', topicQuiz: true },
     '10sinif_fizik_senaryo4_calisma_alani.html': { course: 'physics', key: 'physicsScenario4Done2026', topicQuiz: true },
+    '10sinif_cografya_senaryo4_calisma_alani.html': { course: 'geography', key: 'cografyaScenario4Done2026', topicQuiz: true },
     '10sinif_sayfa94_calisma_alani.html': { course: 'math', key: 'math94-progress-v3', topicQuiz: true },
     '10sinif_almanca_neue_stadt_calisma_alani.html': { course: 'german', key: 'deutsch-thema5-s1-done' },
     '10sinif_metin_tahlilleri_calisma_alani.html': { course: 'literature', key: 'tde-metin-tahlili-done' },
     '10sinif_edebiyat_ortak_yazili_calisma_alani.html': { course: 'tdeExam', key: 'tde-ortak-sinav-2026' },
     '10sinif_tarih_senaryo_calisma_alani.html': { course: 'history', key: 'tarihScenario2026Done', topicQuiz: true },
-    '10sinif_felsefe_sayfa56_calisma_alani.html': { course: 'philosophy', key: 'philosophy56Done', topicQuiz: true }
+    '10sinif_felsefe_sayfa56_calisma_alani.html': { course: 'philosophy', key: 'philosophy56Done', topicQuiz: true },
+    '10sinif_din_kulturu_senaryo1_calisma_alani.html': { course: 'religion', key: 'dinScenario1Done2026', topicQuiz: true }
   };
   const config = pages[page];
   if (!config) return;
